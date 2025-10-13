@@ -2,10 +2,13 @@
 import google.genai as genai
 from google.genai import types
 import os 
+import dotenv 
+
+dotenv.load_dotenv()
 
 Model='models/gemini-2.5-flash'
 # Replace with your Gemini API key
-API_KEY = 'AIzaSyB0nlF8hQLb3d8CnDh-ImskYhsRbVbo7og'
+API_KEY = os.getenv("APIKEY")
 client = genai.Client(api_key=API_KEY)
 
 def ask_chatbot(prompt):
