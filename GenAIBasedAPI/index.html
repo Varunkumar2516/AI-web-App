@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Multi-Tool App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>GenAI Tools</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-tool="chatbot"><i class="fa-solid fa-comments"></i> Chatbot</a></li>
+                    <li><a href="#" class="nav-link" data-tool="summarizer"><i class="fa-solid fa-file-lines"></i> Summarizer</a></li>
+                    <li><a href="#" class="nav-link" data-tool="writer"><i class="fa-solid fa-pencil"></i> Creative Writer</a></li>
+                    <li><a href="#" class="nav-link" data-tool="notes"><i class="fa-solid fa-note-sticky"></i> Note Maker</a></li>
+                    <li><a href="#" class="nav-link" data-tool="ideas"><i class="fa-solid fa-lightbulb"></i> Idea Generator</a></li>
+                    <li><a href="#" class="nav-link" data-tool="translator"><i class="fa-solid fa-language"></i> Text Translator</a></li>
+                    <li><a href="#" class="nav-link" data-tool="image-describer"><i class="fa-solid fa-image"></i> Image Descriptor</a></li>
+                    <li><a href="#" class="nav-link" data-tool="code-explainer"><i class="fa-solid fa-code"></i> Code Explainer</a></li>
+                    <li><a href="#" class="nav-link" data-tool="sentiment"><i class="fa-solid fa-face-smile"></i> Sentiment Analyzer</a></li>
+                    <li><a href="#" class="nav-link" data-tool="speech"><i class="fa-solid fa-microphone"></i> Speech to Text</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div id="welcome-screen" class="tool-content active">
+                 <h1>Welcome to your GenAI Multi-Tool App</h1>
+                 <p>Select a tool from the sidebar to get started.</p>
+            </div>
+
+            <div id="chatbot-tool" class="tool-content">
+                <div class="chat-display">
+                    <div class="message ai-message">Hello! How can I help you today?</div>
+                </div>
+                <div class="chat-input-area">
+                    <textarea id="chatbot-input" placeholder="Ask me anything..."></textarea>
+                    <button id="chatbot-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+
+            <div id="summarizer-tool" class="tool-content generic-tool">
+                <h2>📰 Summarizer</h2>
+                <textarea placeholder="Paste text to summarize here..."></textarea>
+                <button>Summarize</button>
+                <div class="response-area"><div class="placeholder">Your summary will appear here.</div></div>
+            </div>
+            <div id="writer-tool" class="tool-content generic-tool">
+                <h2>✍️ Creative Writer</h2>
+                <textarea placeholder="Enter a topic or idea..."></textarea>
+                <button>Generate</button>
+                <div class="response-area"><div class="placeholder">Your story or poem will appear here.</div></div>
+            </div>
+            <div id="notes-tool" class="tool-content generic-tool">
+                <h2>📑 Note Maker</h2>
+                <textarea placeholder="Paste text to make notes from..."></textarea>
+                <button>Make Notes</button>
+                <div class="response-area"><div class="placeholder">Your notes will appear here.</div></div>
+            </div>
+            <div id="ideas-tool" class="tool-content generic-tool">
+                <h2>💡 Idea Generator</h2>
+                <textarea placeholder="Enter a topic for ideas..."></textarea>
+                <button>Generate Ideas</button>
+                <div class="response-area"><div class="placeholder">Generated ideas will appear here.</div></div>
+            </div>
+             <div id="translator-tool" class="tool-content generic-tool">
+                <h2><i class="fa-solid fa-language"></i> Text Translator</h2>
+                <textarea placeholder="Enter text to translate..."></textarea>
+                <button>Translate</button>
+                <div class="response-area"><div class="placeholder">The translation will appear here.</div></div>
+            </div>
+            <div id="image-describer-tool" class="tool-content generic-tool">
+                <h2><i class="fa-solid fa-image"></i> Image Descriptor</h2>
+                <p>Upload an image to get a detailed description.</p>
+                <input type="file" id="image-upload" accept="image/png, image/jpeg, image/jpg" hidden>
+                <label for="image-upload" class="upload-label">Choose an Image</label>
+                <button>Describe Image</button>
+                <div class="response-area"><div class="placeholder">The image description will appear here.</div></div>
+            </div>
+            <div id="code-explainer-tool" class="tool-content generic-tool">
+                <h2><i class="fa-solid fa-code"></i> Code Explainer</h2>
+                <textarea placeholder="Paste your code here..."></textarea>
+                <button>Explain Code</button>
+                <div class="response-area"><div class="placeholder">The code explanation will appear here.</div></div>
+            </div>
+            <div id="sentiment-tool" class="tool-content generic-tool">
+                <h2><i class="fa-solid fa-face-smile"></i> Sentiment Analyzer</h2>
+                <textarea placeholder="Enter text to analyze its sentiment..."></textarea>
+                <button>Analyze Sentiment</button>
+                <div class="response-area"><div class="placeholder">The sentiment analysis will appear here.</div></div>
+            </div>
+            <div id="speech-tool" class="tool-content generic-tool">
+                <h2><i class="fa-solid fa-microphone"></i> Speech to Text</h2>
+                <p>Click the button and start speaking.</p>
+                <button id="start-speech-btn">Start Listening</button>
+                <div class="response-area" id="speech-output">Your spoken text will appear here.</div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
