@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from flask_cors import CORS
 import os
 from werkzeug.utils import secure_filename
@@ -26,6 +26,10 @@ def handle_request(handler_func, request_data, data_key):
         print(f"Error processing request: {e}")
         return jsonify({"error": "An internal server error occurred"}), 500
 
+
+@app.route("/")
+def home():
+    return render_template("index.html")
 @app.route('/api/chatbot', methods=['POST'])
 def chatbot_endpoint():
     return handle_request(ask_chatbot, request.json, 'prompt')
